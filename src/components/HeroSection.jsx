@@ -66,7 +66,7 @@ const HeroSection = () => {
   }, [slides.length]);
 
   return (
-    <section className="relative h-[calc(100vh-80px)] min-h-[600px] flex items-center justify-center overflow-hidden bg-secondary">
+    <section className="relative h-[calc(100vh-0px)] min-h-[600px] flex items-center justify-center overflow-hidden bg-secondary">
       {/* Background Slide with Overlay */}
       <AnimatePresence>
         <motion.div
