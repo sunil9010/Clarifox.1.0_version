@@ -21,26 +21,43 @@ const AboutPage = () => {
         <meta name="description" content="Learn about Clarifox's mission, vision, and the values that drive our commitment to delivering exceptional IT and staffing solutions." />
       </Helmet>
 
-      <div className="relative bg-secondary pt-20">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold gradient-text mb-6"
-          >
-            About Clarifox
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
-          >
-            Your strategic partner in navigating the ever-evolving landscape of technology and talent.
-          </motion.p>
-        </div>
-      </div>
+ 
+      <div className="relative bg-secondary pt-20 overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      className="w-full h-full object-cover opacity-100"
+      alt="Abstract background of glowing data streams"
+      src="/images/who we are.png"
+    />
+    {/* Optional top fade */}
+    <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+    {/* ✨ Global Dark Overlay */}
+    <div className="absolute inset-0 bg-black/50"></div>
+  </div>
+
+  {/* Foreground Content */}
+  <div className="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-4xl md:text-5xl font-bold text-white mb-6"
+      style={{ fontFamily: "'Georgia', serif" }}
+    >
+      About <span className='gradient'>Us</span>
+    </motion.h1>
+
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      className="text-xl text-gray-200 max-w-3xl mx-auto"
+    >
+     Your strategic partner in navigating the ever-evolving landscape of technology and talent.
+    </motion.p>
+  </div>
+</div>
 
       <div className="py-24 px-4 sm:px-6 lg:px-8 bg-background text-foreground">
         <div className="max-w-screen-xl mx-auto">

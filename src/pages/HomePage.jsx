@@ -1,4 +1,5 @@
 import { useState,useEffect } from 'react';
+
 import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from 'react-helmet';
@@ -10,7 +11,7 @@ import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import CountUp from 'react-countup';
 
-import { ArrowRight, CheckCircle, Quote, HeartHandshake as Handshake, Presentation } from 'lucide-react';
+import { ArrowRight, CheckCircle, Quote, HeartHandshake as Handshake, Presentation,Zap , Briefcase } from 'lucide-react';
 
 const HomePage = () => {
   const solutions = [
@@ -79,7 +80,16 @@ useEffect(() => {
     return () => clearInterval(interval);
 
   }, []);
+  const teamMembers = [
+    { name: "Sreekanth Reddy Chinta", role: "Founder & Lead Consultant", bio: "With over 4 years of dedicated experience in talent acquisition and career consulting, Sreekanth has successfully guided hundreds of professionals to their dream careers. His vision for Career Waves is to be a beacon of opportunity and growth for job seekers across India.", image: "Professional headshot of Pavan Chowdary", delay: 0.2 },
+  ];
+    const statics = [
+    { value: "100+", label: "Successful Placements", icon: CheckCircle, delay: 0.1 },
+    { value: "4+", label: "Years of Experience", icon: Zap, delay: 0.3 },
+    { value: "Diverse", label: "Industries Covered", icon: Briefcase, delay: 0.5 },
+  ];
   return (
+    
     <PageWrapper>
       <Helmet>
         <title>Clarifox - Premier IT & Staffing Solutions</title>
@@ -106,7 +116,7 @@ useEffect(() => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Your Strategic Partner in Technology and Talent</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Your Strategic Partner in <span className="gradient-text">Technology and Talent</span></h2>
               <p className="text-lg text-muted-foreground mb-4">Clarifox is a premier IT and staffing solutions provider dedicated to helping businesses navigate the complexities of the digital world. Our mission is to deliver innovative technology services and connect exceptional talent with leading companies.</p>
               <p className="text-lg text-muted-foreground mb-8">We believe in building long-term partnerships based on trust, integrity, and a deep understanding of our clients' needs.</p>
               <Button asChild variant="link" className="text-primary text-lg p-0 h-auto">
@@ -128,7 +138,7 @@ useEffect(() => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-<h2 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:flex-col flex flex-wrap items-center justify-center gap-2 text-center px-4">
+<h2 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 md:flex-row sm:flex-col flex flex-wrap items-center justify-center gap-2 text-center px-4">
   <span className="text-primary">Our Solutions</span>
 
   <div className="relative h-8 sm:h-10 w-[70%] sm:w-[450px] overflow-hidden whitespace-nowrap text-left">
@@ -175,11 +185,30 @@ useEffect(() => {
           </div>
         </div>
       </section>
+       <section id="stats" className="bg-slate-800 text-white section-padding">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            {statics.map((stat) => (
+              <motion.div 
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: stat.delay }}
+                className="p-6 rounded-lg"
+              >
+                <stat.icon size={48} className="mx-auto mb-4 text-sky-400" />
+                <p className="text-4xl font-bold gradient-text">{stat.value}</p>
+                <p className="text-slate-300 text-lg">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="py-24 bg-background">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Strategic Collaborations</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Strategic<span className="gradient-text"> Collaborations</span> </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">Partnering with industry leaders to bring you the best-in-class tools and platforms.</p>
           </div>
          <div className="grid md:grid-cols-2 gap-8">
@@ -250,7 +279,7 @@ useEffect(() => {
   <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div className="text-center mb-16">
       <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 font-handwritten">
-        Why Choose Clarifox?
+        Why Choose <span className="gradient-text">Clarifox?</span>
       </h2>
       <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
         We are committed to excellence and delivering tangible results for our clients.
@@ -303,10 +332,10 @@ useEffect(() => {
    <section className="py-24 bg-secondary">
   <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">What Our Clients Say</h2>
+      <h2 className="text-3xl md:text-4xl font-bold  mb-4">What Our <span className="gradient-text">Clients Say</span> </h2>
     </div>
 
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden pb-10">
       <Swiper
   modules={[Autoplay]}
   autoplay={{ delay: 3000 }}
@@ -336,6 +365,40 @@ useEffect(() => {
   ))}
 </Swiper>
     </div>
+     <section className="bg-white pb-11 pt-10">
+        <div className="container mx-auto px-4">
+          {/* <motion.h2 
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-bold text-slate-800 text-center mb-10"
+          >
+            Meet Our <span className="gradient-text">Founder</span>
+          </motion.h2> */}
+          {teamMembers.map((member) => (
+            <motion.div 
+              key={member.name} 
+              className="max-w-4xl mx-auto bg-gradient-to-r from-sky-50 via-white to-cyan-50 p-8 md:p-12 rounded-xl shadow-xl flex flex-col md:flex-row items-center gap-8 md:gap-12"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: member.delay }}
+            >
+              <img  
+                className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-lg border-4 border-sky-300" 
+                alt={member.name}
+               src="https://images.unsplash.com/photo-1649015931204-15a3c789e6ea" />
+              <div className="text-center md:text-left">
+                <h3 className="text-3xl font-bold text-slate-800 mb-1">{member.name}</h3>
+                <p className="text-sky-600 font-semibold text-lg mb-4">{member.role}</p>
+                <p className="text-slate-600 leading-relaxed">{member.bio}</p>
+                 <blockquote className="italic text-sm text-sky-700 border-l-4 pl-4 border-sky-400">
+            “We believe everyone deserves a fulfilling career. At Clarifox, we empower dreams through dedication, innovation, and impact.”
+          </blockquote>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
   </div>
 </section>
 

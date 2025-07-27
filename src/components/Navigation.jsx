@@ -4,8 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu, X, User, LogOut, Briefcase, Home, Users, BrainCircuit,
   ShieldCheck, BarChart, Search, Mail, ChevronDown, Bot,
-  HeartHandshake as Handshake, FileText
+  HeartHandshake as Handshake, FileText,BookOpenCheck,Landmark
 } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth.jsx';
 import ClarifoxLogo from '@/components/ClarifoxLogo';
@@ -24,21 +25,25 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '/', icon: Home },
-    { name: 'Talent Services', href: '/talent-services', icon: Handshake },
-    { name: 'Hire.Train.Deploy', href: '/hire-train-deploy', icon: Users },
-    { name: 'Microsoft Services', href: '/microsoft-services', icon: Bot },
-    { name: 'Artificial Intelligence', href: '/artificial-intelligence', icon: BrainCircuit },
-    { name: 'Analytics', href: '/analytics-bi', icon: BarChart },
-    { name: 'Cyber Security', href: '/cyber-security', icon: ShieldCheck },
-    { name: 'Exclusive Search', href: '/exclusive-search', icon: Search },
-  ];
+  { name: 'Home', href: '/', icon: <Home className="w-4 h-4 mr-2" /> },
+  { name: 'Talent Services', href: '/talent-services', icon: <Handshake className="w-4 h-4 mr-2" /> },
+  { name: 'Hire.Train.Deploy', href: '/hire-train-deploy', icon: <Users className="w-4 h-4 mr-2" /> },
+  { name: 'Microsoft Services', href: '/microsoft-services', icon: <Bot className="w-4 h-4 mr-2" /> },
+  { name: 'Artificial Intelligence', href: '/artificial-intelligence', icon: <BrainCircuit className="w-4 h-4 mr-2" /> },
+  { name: 'Analytics', href: '/analytics-bi', icon: <BarChart className="w-4 h-4 mr-2" /> },
+  { name: 'Cyber Security', href: '/cyber-security', icon: <ShieldCheck className="w-4 h-4 mr-2" /> },
+ 
+];
 
   const topUtilityItems = [
-    { name: 'Jobs', href: '/jobs', icon: Briefcase },
-    { name: 'Blogs', href: '/blogs', icon: FileText },
-    { name: 'Contact', href: '/contact', icon: Mail },
-  ];
+  { name: 'Jobs', href: '/jobs', icon: <Briefcase className="w-4 h-4 mr-2" /> },
+  { name: 'Blogs', href: '/blogs', icon: <FileText className="w-4 h-4 mr-2" /> },
+  { name: 'Contact Us', href: '/contact', icon: <Mail className="w-4 h-4 mr-2" /> },
+  { name: 'About Us', href: '/about', icon: <Landmark className="w-4 h-4 mr-2" /> },
+  { name: 'Courses', href: '/courses', icon: <BookOpenCheck className="w-4 h-4 mr-2" /> },
+   { name: 'Exclusive Search', href: '/exclusive-search', icon: <Search className="w-4 h-4 mr-2" /> },
+];
+
 
   const trainingSolutions = [
     { name: 'Contract Placements', href: '/training/contract-placements' },
@@ -78,12 +83,12 @@ useEffect(() => {
 }, []);
 
 
-const NavItem = ({ href, name, isMobile = false }) => (
+const NavItem = ({ icon, href, name, isMobile = false, setIsOpen }) => (
   <NavLink
     to={href}
-    onClick={() => setIsOpen(false)}
+    onClick={() => isMobile && setIsOpen?.(false)}
     className={({ isActive }) =>
-      `relative transition-colors text-sm font-medium 
+      `relative transition-colors text-sm font-medium flex items-center 
       ${isMobile 
         ? `${isActive ? 'text-primary' : 'text-foreground'} block py-2 px-4 rounded-md hover:bg-muted` 
         : `${isActive ? 'text-primary' : 'text-white hover:text-primary'} 
@@ -91,9 +96,11 @@ const NavItem = ({ href, name, isMobile = false }) => (
       }`
     }
   >
-    {name}
+    {icon}
+    <span>{name}</span>
   </NavLink>
 );
+
 
 
   return (
@@ -242,7 +249,7 @@ const NavItem = ({ href, name, isMobile = false }) => (
                 onClick={() => setIsOpen(false)}
                 className="block py-2 px-3 rounded-md hover:bg-primary/10 text-sm text-green-950  duration-200"
               >
-                {item.name}
+               {item.name}
               </NavLink>
             ))}
           </div>

@@ -16,6 +16,7 @@ import LoginPage from '@/pages/LoginPage';
 import BlogsPage from '@/pages/BlogsPage';
 import CookiePolicyPage from '@/pages/CookiePolicyPage';
 import NotFoundPage from '@/pages/NotFoundPage';
+import CoursesPage from './pages/CoursesPage'
 
 import TalentServicesPage from '@/pages/services/TalentServicesPage';
 import HireTrainDeployPage from '@/pages/services/HireTrainDeployPage';
@@ -54,6 +55,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+          <Route path="/courses" element={<CoursesPage/>}/>
 
           {/* Main Services */}
           <Route path="/talent-services" element={<TalentServicesPage />} />
