@@ -81,7 +81,7 @@ useEffect(() => {
 
   }, []);
   const teamMembers = [
-    { name: "Sreekanth Reddy Chinta", role: "Founder & Lead Consultant", bio: "With over 4 years of dedicated experience in talent acquisition and career consulting, Sreekanth has successfully guided hundreds of professionals to their dream careers. His vision for Career Waves is to be a beacon of opportunity and growth for job seekers across India.", image: "Professional headshot of Pavan Chowdary", delay: 0.2 },
+    { name: "Bhanu Prakash Reddy", role: "Founder & Lead Consultant", bio: "With over 4 years of dedicated experience in talent acquisition and career consulting, Sreekanth has successfully guided hundreds of professionals to their dream careers. His vision for Career Waves is to be a beacon of opportunity and growth for job seekers across India.", image: "Professional headshot of Bhanu", delay: 0.2 },
   ];
     const statics = [
     { value: "100+", label: "Successful Placements", icon: CheckCircle, delay: 0.1 },
@@ -108,7 +108,7 @@ useEffect(() => {
               viewport={{ once: true }}
               className="relative h-96"
             >
-              <img  className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl shadow-lg" alt="Modern office interior" src="https://images.unsplash.com/photo-1703355685639-d558d1b0f63e" />
+              <img  className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl shadow-lg" alt="Modern office interior" src="/images/statergy.png" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}

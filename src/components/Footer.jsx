@@ -3,8 +3,23 @@ import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import ClarifoxLogo from '@/components/ClarifoxLogo';
 import { useToast } from '@/components/ui/use-toast';
+const ClarifoxLogo = () => {
+  return (
+   <div className="flex flex-col items-center justify-center bg-blue-950 rounded py-2 gap-1">
+  <motion.img
+    whileHover={{ scale: 1.05 }}
+    src="/images/company logo.png"
+    alt="Clarifox Logo"
+    className="w-16 sm:w-20 md:w-24 h-auto object-contain"
+  />
+  <p className="text-white text-[8px] sm:text-[10px] md:text-[12px] font-light">
+    IT Consulting & Staffing
+  </p>
+</div>
+
+  );
+};
 
 const Footer = () => {
   const [showCookieBanner, setShowCookieBanner] = useState(true);
@@ -59,7 +74,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <ClarifoxLogo className="h-10 w-auto" />
+              <ClarifoxLogo  />
               <p className="text-muted-foreground leading-relaxed">
                 Your strategic partner in technology and talent solutions.
               </p>

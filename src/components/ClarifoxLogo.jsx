@@ -1,19 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const ClarifoxLogo = ({ className = '', bgColor = 'bg-blue-950', size = 'lg:w-22 w-16 md:w-24' }) => {
+const ClarifoxLogo = () => {
   return (
-    <div className={`flex items-center ${className}`}>
-      <motion.div
-        whileHover={{ scale: 1.1, rotate: -10 }}
-        className={`${size} h-auto rounded-lg flex items-center justify-center shadow-lg ${bgColor}`}
-      >
-        <img
-          src="/images/Clarifox_Logo-removebg-preview.png"
-          alt="Clarifox Logo"
-          className="w-full h-auto object-contain rounded"
-        />
-      </motion.div>
+    <div className="flex flex-col items-center">
+      <motion.img
+        whileHover={{ scale: 1.05 }}
+        src="/images/company logo.png"
+        alt="Clarifox Logo"
+        className="w-12 md:w-22 sm:w-16 bottom-5 md:bottom-5 h-14 absolute object-contain"
+      />
+      <p className="gradient-text block   text-[7px] sm:text-[10px]  md:text-[8px]">
+        IT Consulting & Staffing
+      </p>
     </div>
   );
 };
