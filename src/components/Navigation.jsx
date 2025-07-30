@@ -15,7 +15,7 @@ const ClarifoxLogo = () => {
     <div className="flex items-center">
       <motion.img
         whileHover={{ scale: 1.05 }}
-        src="/images/modern_2.png"
+        src="/images/logomodern.png"
         alt="Clarifox Logo"
         className="w-28 sm:w-40 md:w-40 h-auto max-h-20 object-contain"
       />
@@ -138,12 +138,12 @@ const Navigation = () => {
 
       {/* Main nav bar with logo and nav items aligned */}
       <div className="flex justify-between items-center px-8 ">
-<div className="flex-shrink-0 mb-2">
+<div className="flex-shrink-0 ">
         <NavLink to="/" className="flex min-w-15 ">
           <ClarifoxLogo />
         </NavLink>
 </div>
-        <div className="hidden lg:flex items-end space-x-6 pt-4">
+        <div className="hidden lg:flex items-end space-x-6 mb-4 pt-4">
           {navItems.map((item) => (
             <NavItem key={item.name} {...item} />
           ))}
