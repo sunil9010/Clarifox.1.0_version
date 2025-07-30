@@ -137,7 +137,7 @@ const Navigation = () => {
       </div>
 
       {/* Main nav bar with logo and nav items aligned */}
-      <div className="flex justify-between items-center px-8 py-4">
+      <div className="flex justify-between items-center px-8 ">
 <div className="flex-shrink-0 mb-2">
         <NavLink to="/" className="flex min-w-15 ">
           <ClarifoxLogo />
