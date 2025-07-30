@@ -12,16 +12,13 @@ import { useAuth } from '@/hooks/useAuth.jsx';
 
 const ClarifoxLogo = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex items-center">
       <motion.img
         whileHover={{ scale: 1.05 }}
-        src="/images/company logo.png"
+        src="/images/modern_2.png"
         alt="Clarifox Logo"
-        className="w-12 md:w-22 sm:w-16 bottom-5 md:bottom-5 h-14 absolute object-contain"
+        className="w-28 sm:w-40 md:w-40 h-auto max-h-20 object-contain"
       />
-      <p className="text-white block   text-[7px] sm:text-[10px]  md:text-[8px]">
-        IT Consulting & Staffing
-      </p>
     </div>
   );
 };
@@ -131,6 +128,7 @@ const Navigation = () => {
             size="sm"
             className="bg-gradient-to-r from-primary to-accent text-white"
           >
+
             <NavLink to="/login">
               <User className="w-4 h-4 mr-1" /> Login
             </NavLink>
@@ -139,11 +137,12 @@ const Navigation = () => {
       </div>
 
       {/* Main nav bar with logo and nav items aligned */}
-      <div className="flex justify-between items-end py-5 sm:py-3 px-8">
-        <NavLink to="/" className="flex flex-col items-start min-w-24">
+      <div className="flex justify-between items-center px-8 py-4">
+<div className="flex-shrink-0 mb-2">
+        <NavLink to="/" className="flex min-w-15 ">
           <ClarifoxLogo />
         </NavLink>
-
+</div>
         <div className="hidden lg:flex items-end space-x-6 pt-4">
           {navItems.map((item) => (
             <NavItem key={item.name} {...item} />

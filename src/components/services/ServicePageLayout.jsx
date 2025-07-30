@@ -65,7 +65,7 @@ const ServicePageLayout = ({ title,alt, tagline, bannerImage, description, servi
                   <img  className="w-full h-full object-cover rounded-2xl shadow-lg" alt={service.alt} src={service.image} />
                 </div>
                 <div className="space-y-4">
-                  <h2 className="text-3xl font-bold text-foreground">{service.title}</h2>
+                  <h2 className="text-3xl font-bold gradient-text">{service.title}</h2>
                   <p className="text-lg text-muted-foreground">{service.description}</p>
                 </div>
               </motion.div>

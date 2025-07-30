@@ -9,13 +9,11 @@ const ClarifoxLogo = () => {
    <div className="flex flex-col items-center justify-center bg-blue-950 rounded py-2 gap-1">
   <motion.img
     whileHover={{ scale: 1.05 }}
-    src="/images/company logo.png"
+    src="/images/modern_2.png"
     alt="Clarifox Logo"
-    className="w-16 sm:w-20 md:w-24 h-auto object-contain"
+    className="w-16 sm:w-20 md:w-36 h-auto object-contain"
   />
-  <p className="text-white text-[8px] sm:text-[10px] md:text-[12px] font-light">
-    IT Consulting & Staffing
-  </p>
+  
 </div>
 
   );

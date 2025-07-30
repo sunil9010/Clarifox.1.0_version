@@ -98,32 +98,53 @@ const MicrosoftServicesPage = () => {
           </motion.div>
 
           {/* Services Section */}
-          <div className="space-y-20">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className={`grid lg:grid-cols-2 gap-16 items-center ${
-                  index % 2 !== 0 ? 'lg:grid-flow-col-dense' : ''
-                }`}
-              >
-                <div className={`relative h-96 ${index % 2 !== 0 ? 'lg:col-start-2' : ''}`}>
-                  <img
-                    className="w-full h-full object-cover rounded-2xl shadow-lg"
-                    alt={service.title}
-                    src={service.image}
-                  />
-                </div>
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-bold text-foreground">{service.title}</h2>
-                  <p className="text-lg text-muted-foreground">{service.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        <div className="space-y-20">
+  {services.map((service, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className={`grid lg:grid-cols-2 gap-16 items-center ${
+        index % 2 !== 0 ? 'lg:grid-flow-col-dense' : ''
+      }`}
+    >
+      <motion.div
+        className={`relative h-96 ${index % 2 !== 0 ? 'lg:col-start-2' : ''}`}
+        whileHover={{ scale: 1.05, rotate: 1 }} // Hover effect on image container
+        transition={{ type: 'spring', stiffness: 200, damping: 10 }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+      >
+        <motion.img
+          src={service.image}
+          alt={service.title}
+          className="w-full h-full object-cover rounded-2xl shadow-lg"
+          whileHover={{
+            scale: 1.08,
+            rotate: 2,
+            boxShadow: '0px 20px 30px rgba(0,0,0,0.2)',
+          }}
+          transition={{ duration: 0.4 }}
+        />
+      </motion.div>
+
+      <motion.div
+        className="space-y-4"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2, duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl font-bold gradient-text">{service.title}</h2>
+        <p className="text-lg text-muted-foreground">{service.description}</p>
+      </motion.div>
+    </motion.div>
+  ))}
+</div>
+
 
           {/* CTA Section */}
           {cta && (

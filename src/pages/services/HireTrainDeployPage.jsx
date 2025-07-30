@@ -118,7 +118,7 @@ const HireTrainDeployPage = () => {
                   />
                 </div>
                 <div className="space-y-4">
-                  <h2 className="text-3xl font-bold text-foreground">
+                  <h2 className="text-3xl font-bold gradient-text">
                     {service.title}
                   </h2>
                   <p className="text-lg text-muted-foreground">
